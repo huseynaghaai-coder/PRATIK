@@ -1,0 +1,224 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper"></div>
+    <script src="./script.js"></script>
+</body>
+</html> -->
+<!-- <!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <title>iPhone Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="calculator">
+    <div class="display" id="display">0</div>
+
+    <div class="buttons">
+      <button class="btn gray">AC</button>
+      <button class="btn gray">±</button>
+      <button class="btn gray">%</button>
+      <button class="btn orange">÷</button>
+
+      <button class="btn">7</button>
+      <button class="btn">8</button>
+      <button class="btn">9</button>
+      <button class="btn orange">×</button>
+
+      <button class="btn">4</button>
+      <button class="btn">5</button>
+      <button class="btn">6</button>
+      <button class="btn orange">−</button>
+
+      <button class="btn">1</button>
+      <button class="btn">2</button>
+      <button class="btn">3</button>
+      <button class="btn orange">+</button>
+
+      <button class="btn zero">0</button>
+      <button class="btn">.</button>
+      <button class="btn orange">=</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper"></div>
+    <script src="./script.js"></script>
+</body>
+</html>
+<!-- <!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Araba Oyunu</title>
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    #game {
+      position: relative;
+      width: 300px;
+      height: 500px;
+      margin: 20px auto;
+      background: #444;
+      overflow: hidden;
+      border: 3px solid white;
+    }
+
+    .road-line {
+      position: absolute;
+      width: 10px;
+      height: 80px;
+      background: white;
+      left: 145px;
+      animation: move 1s linear infinite;
+    }
+
+    @keyframes move {
+      from { top: -100px; }
+      to { top: 500px; }
+    }
+
+    #car {
+      position: absolute;
+      width: 40px;
+      height: 70px;
+      background: red;
+      bottom: 20px;
+      left: 130px;
+      border-radius: 5px;
+    }
+
+    .enemy {
+      position: absolute;
+      width: 40px;
+      height: 70px;
+      background: yellow;
+      top: -100px;
+      border-radius: 5px;
+    }
+
+    #score {
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🏎️ Araba Oyunu</h1>
+  <p id="score">Puan: 0</p>
+
+  <div id="game">
+    <div class="road-line"></div>
+    <div id="car"></div>
+  </div>
+
+  <script>
+    const game = document.getElementById("game");
+    const car = document.getElementById("car");
+    const scoreText = document.getElementById("score");
+
+    let carX = 130;
+    let score = 0;
+    let gameOver = false;
+
+    document.addEventListener("keydown", (e) => {
+      if (gameOver) return;
+
+      if (e.key === "ArrowLeft" && carX > 0) {
+        carX -= 20;
+      }
+      if (e.key === "ArrowRight" && carX < 260) {
+        carX += 20;
+      }
+      car.style.left = carX + "px";
+    });
+
+    function createEnemy() {
+      const enemy = document.createElement("div");
+      enemy.classList.add("enemy");
+      enemy.style.left = Math.floor(Math.random() * 260) + "px";
+      game.appendChild(enemy);
+
+      let enemyY = -80;
+      const speed = 3 + Math.random() * 2;
+
+      const moveEnemy = setInterval(() => {
+        if (gameOver) {
+          clearInterval(moveEnemy);
+          return;
+        }
+
+        enemyY += speed;
+        enemy.style.top = enemyY + "px";
+
+        const carRect = car.getBoundingClientRect();
+        const enemyRect = enemy.getBoundingClientRect();
+
+        if (
+          carRect.left < enemyRect.right &&
+          carRect.right > enemyRect.left &&
+          carRect.top < enemyRect.bottom &&
+          carRect.bottom > enemyRect.top
+        ) {
+          gameOver = true;
+          alert("💥 ÇARPTIN! Puanın: " + score);
+          location.reload();
+        }
+
+        if (enemyY > 500) {
+          score++;
+          scoreText.textContent = "Puan: " + score;
+          enemy.remove();
+          clearInterval(moveEnemy);
+        }
+      }, 20);
+    }
+
+    setInterval(() => {
+      if (!gameOver) createEnemy();
+    }, 1200);
+  </script>
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Remove P Text</title>
+</head>
+<body>
+
+  <div id="wrapper">
+    <p id="ptag">ptp101</p>
+    <button id="removeBtn">Remove text</button>
+  </div>
+
+  <script src="./script.js"></script>
+
+</body>
+</html>
